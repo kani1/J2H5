@@ -21,7 +21,7 @@ public class Main {
             }
         } while (A.size() < 5);
         {
-            System.out.println("Список А:" + A);
+            print(A);
         }
 
         do {
@@ -32,7 +32,7 @@ public class Main {
             }
         } while (B.size() < 5);
         {
-            System.out.println("Список А:" + B);
+            print(B);
         }
 
         Collections.reverse(B);
@@ -42,10 +42,17 @@ public class Main {
             C.add(B.get(i));
             i++;
         }
-        System.out.println(C);
+        print(C);
 
 
         C.sort(Comparator.comparing(String::length));
-        System.out.println(C);
+        print(C);
 
-}}
+}
+    public static void print(ArrayList<?> list) {
+        Iterator<?> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+}
